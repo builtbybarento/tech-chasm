@@ -4692,3 +4692,12 @@ background: radial-gradient(circle, rgba(9,8,8,1) 4%, rgba(9,8,8,1) 10%, rgba(9,
 		}
 
 	}
+
+/* End of template. Personalization below.  */
+
+#thunder-s{
+	height: 5rem;
+	position: relative;
+	top: 0.6rem;
+	
+}
