@@ -3844,6 +3844,7 @@ background: radial-gradient(circle, rgba(9,8,8,1) 4%, rgba(9,8,8,1) 10%, rgba(9,
 			text-align: center;
 			width: 100%;
 			padding: 0;
+			background: #f5f5f5
 		}
 
 			#main > .posts > * {
@@ -3958,7 +3959,7 @@ background: radial-gradient(circle, rgba(9,8,8,1) 4%, rgba(9,8,8,1) 10%, rgba(9,
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #f5f5f5;
+		background-color: #ffffff;
 		color: #909498;
 		cursor: default;
 		position: relative;
@@ -4713,6 +4714,7 @@ background: radial-gradient(circle, rgba(9,8,8,1) 4%, rgba(9,8,8,1) 10%, rgba(9,
 	/* display: flex;
 	justify-content: center; */
 	text-align: center;
+	background: #f5f5f5;
 }
 html {
 	scroll-behavior: smooth;
