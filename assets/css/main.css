@@ -3479,7 +3479,7 @@ background: radial-gradient(circle, rgba(9,8,8,1) 4%, rgba(9,8,8,1) 10%, rgba(9,
 			}
 
 				#intro h1 {
-					font-size: 3.25rem;
+					/* font-size: 4.5rem; */
 					line-height: 1.1;
 					margin-bottom: 1rem;
 				}
