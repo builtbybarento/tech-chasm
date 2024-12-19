@@ -4708,3 +4708,9 @@ background: radial-gradient(circle, rgba(9,8,8,1) 4%, rgba(9,8,8,1) 10%, rgba(9,
 	top: 0.4rem;
 	
 }
+
+#postsheader{
+	/* display: flex;
+	justify-content: center; */
+	text-align: center;
+}
