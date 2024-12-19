@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thunder Effect</title>
+  <style>
+    @keyframes thunder-flash {
+      0% { 
+        background-color: #000; 
+        opacity: 0.2; /* Lower opacity for subtle effect */
+      }
+      50% { 
+        background-color: #fff; 
+        opacity: 0.5; /* Still subtle but more visible at the peak */
+      }
+      100% { 
+        background-color: #000; 
+        opacity: 0.2; /* Return to subtle opacity */
+      }
+    }
+
+    body.thunder-strike {
+      animation: thunder-flash 0.2s ease-out;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="thunder-sound" src="thunder.mp3" preload="auto"></audio>
+
+  <script>
+    window.onload = function() {
+      var thunderSound = document.getElementById('thunder-sound');
+      
+      setTimeout(function() {
+        thunderSound.play(); // Play the sound after 1 second
+
+        // Trigger the thunder flash effect (1st flash)
+        document.body.classList.add('thunder-strike');
+
+        // Remove the flash effect after 200ms (end of 1st flash)
+        setTimeout(function() {
+          document.body.classList.remove('thunder-strike');
+          
+          // Trigger the thunder flash effect again (2nd flash)
+          setTimeout(function() {
+            document.body.classList.add('thunder-strike');
+            
+            // Remove the flash effect after another 200ms (end of 2nd flash)
+            setTimeout(function() {
+              document.body.classList.remove('thunder-strike');
+            }, 200); // Duration of the second flash
+          }, 200); // Delay for the second flash (after the first flash duration)
+          
+        }, 200); // Duration of the first flash
+      }, 1000); // Delay of 1 second before starting the effect
+    };
+  </script>
+
+</body>
+</html>
