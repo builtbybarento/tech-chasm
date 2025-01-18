@@ -4735,3 +4735,7 @@ html {
 	max-height: 40rem; /* Set max height for the entire article */
 	overflow: hidden; /* Hide overflow of article content */
   }
+	
+	.current-event{
+		max-width: 100%;
+	}
