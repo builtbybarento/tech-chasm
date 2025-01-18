@@ -1,63 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thunder Effect</title>
-  <style>
-    @keyframes thunder-flash {
-      0% { 
-        background-color: #000; 
-        opacity: 0.2; /* Lower opacity for subtle effect */
-      }
-      50% { 
-        background-color: #fff; 
-        opacity: 0.5; /* Still subtle but more visible at the peak */
-      }
-      100% { 
-        background-color: #000; 
-        opacity: 0.2; /* Return to subtle opacity */
-      }
-    }
+    <title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS
+            emailjs.init({
+                publicKey: "ZQKpwfu8STEYdc4uG",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
 
-    body.thunder-strike {
-      animation: thunder-flash 0.2s ease-out;
-      background-color: #000;
-    }
-  </style>
+                // Send form using EmailJS
+                emailjs.sendForm('service_ci9wu4d', 'template_h2gbxel', this)
+                    .then(() => {
+                        // Success notification
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Message Sent!',
+                            text: 'Your message has been successfully sent. Thank you!',
+                        });
+                        this.reset(); // Clear the form
+                    }, (error) => {
+                        // Error notification
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Message Failed',
+                            text: 'Sorry, your message could not be sent. Please try again.',
+                        });
+                        console.error('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
-
-  <audio id="thunder-sound" src="thunder.mp3" preload="auto"></audio>
-
-  <script>
-    window.onload = function() {
-      var thunderSound = document.getElementById('thunder-sound');
-      
-      setTimeout(function() {
-        thunderSound.play(); // Play the sound after 1 second
-
-        // Trigger the thunder flash effect (1st flash)
-        document.body.classList.add('thunder-strike');
-
-        // Remove the flash effect after 200ms (end of 1st flash)
-        setTimeout(function() {
-          document.body.classList.remove('thunder-strike');
-          
-          // Trigger the thunder flash effect again (2nd flash)
-          setTimeout(function() {
-            document.body.classList.add('thunder-strike');
-            
-            // Remove the flash effect after another 200ms (end of 2nd flash)
-            setTimeout(function() {
-              document.body.classList.remove('thunder-strike');
-            }, 200); // Duration of the second flash
-          }, 200); // Delay for the second flash (after the first flash duration)
-          
-        }, 200); // Duration of the first flash
-      }, 1000); // Delay of 1 second before starting the effect
-    };
-  </script>
-
+    <form id="contact-form">
+        <input type="hidden" name="contact_number" value="697483">
+        <label>Name</label>
+        <input type="text" name="user_name" required>
+        <label>Email</label>
+        <input type="email" name="user_email" required>
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+        <input type="submit" value="Send">
+    </form>
 </body>
 </html>

@@ -15,6 +15,44 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS
+            emailjs.init({
+                publicKey: "ZQKpwfu8STEYdc4uG",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Send form using EmailJS
+                emailjs.sendForm('service_ci9wu4d', 'template_h2gbxel', this)
+                    .then(() => {
+                        // Success notification
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Message Sent!',
+                            text: 'Your message has been successfully sent. Thank you!',
+                        });
+                        this.reset(); // Clear the form
+                    }, (error) => {
+                        // Error notification
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Message Failed',
+                            text: 'Sorry, your message could not be sent. Please try again.',
+                        });
+                        console.error('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 
 <body class="is-preload">
@@ -96,7 +134,7 @@
 			</article>
 			<!-- posts headeer -->
 			<section id="postsheader">
-				<h1>Our past meetups</h1>
+				<h1 id="previous-meetups">Our past meetups</h1>
 			</section>
 			<!-- Posts -->
 			<section class="posts">
@@ -226,7 +264,7 @@
 				<section>
 					<h4>Interested in doing a talk? Reach out to us:</h4>
 				</section>
-				<form method="POST" action="send-email.php">
+				<!-- <form method="POST" action="send-email.php">
 					<div class="fields">
 						<div class="field">
 							<label for="name">Name</label>
@@ -244,7 +282,23 @@
 					<ul class="actions">
 						<li><input type="submit" value="Send Message" /></li>
 					</ul>
-				</form>
+				</form> -->
+
+
+					<form id="contact-form">
+						<!-- To simplify the tutorial, the value is static. -->
+						<input type="hidden" name="contact_number" value="ZQKpwfu8STEYdc4uG">
+						<label>Name</label>
+						<input type="text" name="user_name">
+						<label>Email</label>
+						<input type="email" name="user_email">
+						<label>Message</label>
+						<textarea name="message"></textarea>
+						<input type="submit" value="Send">
+					</form>
+				</body>
+
+
 			</section>
 			<section class="split contact" id="contactsFooter">
 
@@ -291,6 +345,16 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+			(function () {
+				emailjs.init({
+					publicKey: "ZQKpwfu8STEYdc4uG",
+				});
+			})();
+	</script>
+
 
 </body>
 
