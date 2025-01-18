@@ -4732,6 +4732,6 @@ html {
   .article-container {
 	display: flex;
 	flex-direction: column;
-	max-height: 600px; /* Set max height for the entire article */
+	max-height: 40rem; /* Set max height for the entire article */
 	overflow: hidden; /* Hide overflow of article content */
   }
