@@ -3786,7 +3786,7 @@ background: radial-gradient(circle, rgba(9,8,8,1) 4%, rgba(9,8,8,1) 10%, rgba(9,
 		}
 
 		#main > .post {
-			padding: 6rem 6rem 4rem 6rem ;
+			padding: 3rem 6rem 4rem 6rem ;
 		}
 
 			#main > .post header.major > .date {
@@ -4738,4 +4738,8 @@ html {
 	
 	.current-event{
 		max-width: 100%;
+	}
+
+	#main-article-header{
+		font-size: 3rem;
 	}
