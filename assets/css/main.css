@@ -2596,6 +2596,7 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+		text-align: center;
 	}
 
 		.image img {
@@ -2637,9 +2638,8 @@ input, select, textarea {
 			}
 
 		.image.main {
-			display: flex;
-			justify-self: center;
-			margin: 2rem 0;
+			margin: 0 auto;
+			padding: 0 0 2rem 0;
 			width: 100%;
 			max-width: 40rem;
 		}
