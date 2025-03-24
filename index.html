@@ -16,43 +16,43 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 	<title>Contact Form</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript">
-        (function() {
-            // Initialize EmailJS
-            emailjs.init({
-                publicKey: "ZQKpwfu8STEYdc4uG",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="text/javascript">
+		(function () {
+			// Initialize EmailJS
+			emailjs.init({
+				publicKey: "ZQKpwfu8STEYdc4uG",
+			});
+		})();
+	</script>
+	<script type="text/javascript">
+		window.onload = function () {
+			document.getElementById('contact-form').addEventListener('submit', function (event) {
+				event.preventDefault();
 
-                // Send form using EmailJS
-                emailjs.sendForm('service_ci9wu4d', 'template_h2gbxel', this)
-                    .then(() => {
-                        // Success notification
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Message Sent!',
-                            text: 'Your message has been successfully sent. Thank you!',
-                        });
-                        this.reset(); // Clear the form
-                    }, (error) => {
-                        // Error notification
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Message Failed',
-                            text: 'Sorry, your message could not be sent. Please try again.',
-                        });
-                        console.error('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+				// Send form using EmailJS
+				emailjs.sendForm('service_ci9wu4d', 'template_h2gbxel', this)
+					.then(() => {
+						// Success notification
+						Swal.fire({
+							icon: 'success',
+							title: 'Message Sent!',
+							text: 'Your message has been successfully sent. Thank you!',
+						});
+						this.reset(); // Clear the form
+					}, (error) => {
+						// Error notification
+						Swal.fire({
+							icon: 'error',
+							title: 'Message Failed',
+							text: 'Sorry, your message could not be sent. Please try again.',
+						});
+						console.error('FAILED...', error);
+					});
+			});
+		}
+	</script>
 </head>
 
 <body class="is-preload">
@@ -120,11 +120,11 @@
 					<li><a href="https://www.meetup.com/the-tech-chasm/" class="button large">Sign Up</a></li>
 				</ul>
 
-				<h3><a href="https://www.meetup.com/the-tech-chasm/events/305383057/?eventOrigin=group_events_list">Next meetup:
-						January 28, 2025 at 2pm!</h3>
-				<h3> CRM Solutions: Client Management Made Simple presented by Mumtahin Farabi.</h3> </a>
+				<h3><a href="https://www.meetup.com/the-tech-chasm/events/306847264/">Next meetup:
+						Sunday, April 6, 2025 at 3pm!</h3>
+				<h3> Modernizing the Concrete Industry with AI</h3> </a>
 				<p>RSVP your spot at <a
-						href="https://www.meetup.com/the-tech-chasm/events/305383057/?eventOrigin=group_events_list">https://www.meetup.com/the-tech-chasm/events/305383057/?eventOrigin=group_events_list
+						href="https://www.meetup.com/the-tech-chasm/events/306847264/">https://www.meetup.com/the-tech-chasm/events/306847264/
 						<p>
 							<img src="images/CRM.png" class="current-event" alt="">
 					</a>
@@ -138,6 +138,20 @@
 			</section>
 			<!-- Posts -->
 			<section class="posts">
+				<article>
+					<header>
+						<span class="date">Sunday, January 26, 2025</span>
+						<h2><a href="https://www.meetup.com/the-tech-chasm/events/305383057/">CRM Solutions: Client Management Made
+								Simple presented by Mumtahin Farabi and Jan Mahinda S.</a></h2>
+					</header>
+					<!-- <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a> -->
+					<p>Join us for an engaging session designed to simplify Customer Relationship Management software (CRMs).
+						We'll explore what CRMs are, it's history, and positive impact, while addressing common challenges faced by
+						businesses.</p>
+					<ul class="actions special">
+						<li><a href="https://www.meetup.com/the-tech-chasm/events/302116008/" class="button">Full Story</a></li>
+					</ul>
+				</article>
 				<article class="article-container">
 					<header>
 						<span class="date">Sunday, November 24, 2024</span>
@@ -223,19 +237,7 @@
 						<li><a href="https://www.meetup.com/the-tech-chasm/events/302235909/" class="button">Full Story</a></li>
 					</ul>
 				</article>
-				<article>
-					<header>
-						<span class="date">Sat, Jul 13, 2024,</span>
-						<h2><a href="https://www.meetup.com/the-tech-chasm/events/302116008/">Introduction To ReactJs For
-								Beginners</a></h2>
-					</header>
-					<!-- <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a> -->
-					<p>We will go over the basics of React and key concepts you will need to understand to get started as a
-						beginner.</p>
-					<ul class="actions special">
-						<li><a href="https://www.meetup.com/the-tech-chasm/events/302116008/" class="button">Full Story</a></li>
-					</ul>
-				</article>
+
 			</section>
 
 
@@ -285,75 +287,75 @@
 				</form> -->
 
 
-					<form id="contact-form">
-						<!-- To simplify the tutorial, the value is static. -->
-						<input type="hidden" name="contact_number" value="ZQKpwfu8STEYdc4uG">
-						<label>Name</label>
-						<input type="text" name="name">
-						<label>Email</label>
-						<input type="email" name="email">
-						<label>Message</label>
-						<textarea name="message"></textarea>
-						<input type="submit" value="Send">
-					</form>
-				</body>
+				<form id="contact-form">
+					<!-- To simplify the tutorial, the value is static. -->
+					<input type="hidden" name="contact_number" value="ZQKpwfu8STEYdc4uG">
+					<label>Name</label>
+					<input type="text" name="name">
+					<label>Email</label>
+					<input type="email" name="email">
+					<label>Message</label>
+					<textarea name="message"></textarea>
+					<input type="submit" value="Send">
+				</form>
+</body>
 
 
-			</section>
-			<section class="split contact" id="contactsFooter">
+</section>
+<section class="split contact" id="contactsFooter">
 
-				<section class="alt">
-					<h3>Meetup </h3>
-					<p><a href="https://www.meetup.com/the-tech-chasm/">https://www.meetup.com/the-tech-chasm/</a></p>
-				</section>
-				<!-- <section>
+	<section class="alt">
+		<h3>Meetup </h3>
+		<p><a href="https://www.meetup.com/the-tech-chasm/">https://www.meetup.com/the-tech-chasm/</a></p>
+	</section>
+	<!-- <section>
 								<h3>Phone</h3>
 								<p><a href="#">(000) 000-0000</a></p>
 							</section> -->
-				<section>
-					<h3>Email</h3>
-					<p><a href="#">info@thetechchasm.com</a></p>
-				</section>
-				<section>
-					<h3>Social</h3>
-					<ul class="icons alt">
-						<li><a href="https://www.linkedin.com/company/the-tech-chasm/" class="icon brands alt fa-linkedin"><span
-									class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-					</ul>
-				</section>
-			</section>
-		</footer>
+	<section>
+		<h3>Email</h3>
+		<p><a href="#">info@thetechchasm.com</a></p>
+	</section>
+	<section>
+		<h3>Social</h3>
+		<ul class="icons alt">
+			<li><a href="https://www.linkedin.com/company/the-tech-chasm/" class="icon brands alt fa-linkedin"><span
+						class="label">LinkedIn</span></a></li>
+			<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+		</ul>
+	</section>
+</section>
+</footer>
 
-		<!-- Copyright -->
-		<div id="copyright">
-			<ul>
-				<li>&copy; Built By Barento</li>
-				<li> <a href="https://builtbybarento.netlify.app/">https://builtbybarento.netlify.app/</a></li>
-			</ul>
-		</div>
+<!-- Copyright -->
+<div id="copyright">
+	<ul>
+		<li>&copy; Built By Barento</li>
+		<li> <a href="https://builtbybarento.netlify.app/">https://builtbybarento.netlify.app/</a></li>
+	</ul>
+</div>
 
-	</div>
+</div>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-	</script>
-	<script type="text/javascript">
-			(function () {
-				emailjs.init({
-					publicKey: "ZQKpwfu8STEYdc4uG",
-				});
-			})();
-	</script>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+		(function () {
+			emailjs.init({
+				publicKey: "ZQKpwfu8STEYdc4uG",
+			});
+		})();
+</script>
 
 
 </body>
